@@ -1,7 +1,7 @@
 <script setup lang="ts">
-
+import variables from "@/styles/variables.module.scss";
 defineProps<{ msg: string }>()
-
+console.log(variables.bgColor)
 const count = ref(0)
 </script>
 
@@ -15,7 +15,7 @@ const count = ref(0)
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
   </div>
-  <div>
+  <div :style="{ 'background-color': variables.bgColor }">
     <el-button type="success"><i-ep-SuccessFilled />Success</el-button>
     <el-button type="info"><svg-icon icon-class="edit"/><i-ep-InfoFilled />Info</el-button>
     <el-button type="warning"><i-ep-WarningFilled />Warning</el-button>
@@ -38,8 +38,6 @@ const count = ref(0)
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
+<style lang="scss" scoped>
+
 </style>
