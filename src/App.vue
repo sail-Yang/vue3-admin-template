@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "@/components/HelloWorld.vue";
+
+import { useCounterStore } from "@/store/counter";
+const counterStore = useCounterStore();
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <h1 class="text-3xl">vue3-element-admin-父组件</h1>
+  <el-button type="primary" @click="counterStore.increment">count++</el-button>
+  <HelloWorld />
 </template>
 
 <style scoped>
